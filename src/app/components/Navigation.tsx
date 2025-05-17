@@ -1,15 +1,10 @@
 'use client'
 
-import { useState, useRef, useEffect, RefObject, ElementType } from 'react'
+import { useState, useEffect, RefObject, ElementType } from 'react'
+import Image from 'next/image'
 import {
-  Dialog,
-  DialogPanel,
   PopoverGroup,
 } from '@headlessui/react'
-import {
-  Bars3Icon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
 import Link from "next/link"
 import SwitchThemes from './SwitchThemes'
 
@@ -83,7 +78,7 @@ export default function Navigation( { sectionRefs, menuItem, isMobile, showHeade
 
     window.addEventListener("header-scroll", onScrollChange);
     return () => window.removeEventListener("header-scroll", onScrollChange);
-  }, []);
+  }, [sectionRefs]);
 
   
 
@@ -112,7 +107,9 @@ export default function Navigation( { sectionRefs, menuItem, isMobile, showHeade
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex gap-2 items-center" onClick={(e) => scrollTo(0,e)}>
             <span className="sr-only">Rehat Springbed</span>
-            <img
+            <Image
+              width={16}
+              height={16}
               alt=""
               src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
               className="h-9 w-auto"

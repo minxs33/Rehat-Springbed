@@ -2,7 +2,6 @@
 
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import ChooseUs from "./components/ChooseUs";
 import { useState, useRef, useEffect } from "react";
 import Navigation from "./components/Navigation";
 import About from "./components/About";

@@ -1,6 +1,6 @@
-import { forwardRef, useState, useEffect } from "react";
+import { forwardRef } from "react";
 
-const Hero = forwardRef<HTMLElement>((props, ref) => {
+const Contact = forwardRef<HTMLElement>((props, ref) => {
     return(
         <section ref={ref} id="contact" className="bg-background py-20 lg:py-25">
             <div className="container mx-auto px-4">
@@ -14,4 +14,5 @@ const Hero = forwardRef<HTMLElement>((props, ref) => {
     )
 })
 
-export default Hero
+Contact.displayName = "Contact";
+export default Contact

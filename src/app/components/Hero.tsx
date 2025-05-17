@@ -1,5 +1,5 @@
 'use client'
-import { Fragment, useState, useEffect, useRef, forwardRef } from "react";
+import { Fragment, useState, useEffect, forwardRef } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import Rellax from 'rellax';
@@ -18,6 +18,13 @@ const slides = [
     height: 1024,
   }
 ];
+
+interface SocialButtonProps {
+  onClick: () => void;
+  icon: React.ReactNode;
+  children?: React.ReactNode;
+  className?: string;
+}
 
 const Hero = forwardRef<HTMLElement>((props, ref) => {
 
@@ -70,15 +77,11 @@ const Hero = forwardRef<HTMLElement>((props, ref) => {
     setLoading(false);
   };
 
-  const handlePrev = () => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
   const handleNext = () => {
     setCurrent((prev) => (prev + 1) % slides.length);
   };
 
-  const SocialButton = ({ onClick, icon, children, className } : any) => (
+  const SocialButton = ({ onClick, icon, children, className } : SocialButtonProps) => (
     <button onClick={onClick} className={`flex items-center gap-2 rounded-full font-semibold drop-shadow-lg ${className}`}>
       {icon}
       {children}
@@ -187,30 +190,5 @@ const Hero = forwardRef<HTMLElement>((props, ref) => {
     </section>
   );
 })
-
+Hero.displayName = "Hero";
 export default Hero;
-
-{/* <button
-  onClick={handlePrev}
-  className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white transition"
->
-  <ChevronLeftIcon className="w-6 h-6" />
-</button>
-<button
-  onClick={handleNext}
-  className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full text-white transition"
->
-  <ChevronRightIcon className="w-6 h-6" />
-</button> */}
-{/* Indicators */}
-{/* <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-  {slides.map((_, idx) => (
-    <button
-      key={idx}
-      onClick={() => setCurrent(idx)}
-      className={`w-3 h-3 rounded-full transition-all duration-300 ${
-        idx === current ? "bg-white" : "bg-white/50"
-      }`}
-    />
-  ))}
-</div> */}

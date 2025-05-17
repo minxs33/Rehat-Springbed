@@ -91,4 +91,5 @@ const Services = forwardRef<HTMLElement, ServicesProps>((props, ref) => {
     );
 });
 
+Services.displayName = "Services";
 export default Services;

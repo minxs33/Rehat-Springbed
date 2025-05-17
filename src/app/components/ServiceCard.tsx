@@ -16,7 +16,7 @@ interface ServiceItem {
   }
 
 export default function ServiceCard({ title, image, description, items }: ServiceCardProps) {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     const stickyImage = useRef<HTMLDivElement | null>(null);
 
@@ -50,6 +50,7 @@ export default function ServiceCard({ title, image, description, items }: Servic
                       width={100}
                       height={100}
                       className="w-full min-w-[100px] md:max-w-[150px] aspect-square rounded-t-xl md:rounded-s-xl object-cover"
+                      onLoadingComplete={() => setIsLoading(false)}
                     />
                     <div className="flex flex-col gap-2 p-3 md:pt-0 text-justify">
                       <h3 className="font-bold text-base sm:text-lg text-foreground">{item.title}</h3>
