@@ -8,6 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import { HomeIcon as HomeIconOutline, BriefcaseIcon as BriefcaseIconOutline, InformationCircleIcon as InfoIconOutline, ChatBubbleBottomCenterIcon as ChatIconOutline } from "@heroicons/react/24/outline";
 import { HomeIcon as HomeIconSolid, BriefcaseIcon as BriefcaseIconSolid, InformationCircleIcon as InfoIconSolid, ChatBubbleBottomCenterIcon as ChatIconSolid, } from "@heroicons/react/24/solid";
+import Partnership from "./components/Partnership";
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(true);
@@ -91,9 +92,9 @@ export default function Home() {
 
   return (
     <>
-      <Navigation sectionRefs={sectionRefs} menuItem={menuItem} isMobile={isMobile} showHeader={showHeader}/>
+      <Navigation sectionRefs={sectionRefs} menuItem={menuItem} isMobile={isMobile} showHeader={showHeader} setShowHeader={setShowHeader}/>
       <Hero ref={sectionRefs[0]}/>
-      {/* <ChooseUs /> */}
+      <Partnership />
       <Services ref={sectionRefs[1]} showHeader={showHeader}/>
       <About ref={sectionRefs[2]}/>
       <Contact />

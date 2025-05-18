@@ -23,9 +23,10 @@ interface NavigationProps {
   menuItem: MenuItem[]
   isMobile: boolean
   showHeader: boolean
+  setShowHeader: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Navigation( { sectionRefs, menuItem, isMobile, showHeader } : NavigationProps) {
+export default function Navigation( { sectionRefs, menuItem, isMobile, showHeader, setShowHeader } : NavigationProps) {
   
   const [menuItems, setMenuItems] = useState(menuItem)
   const [isSticky, setIsSticky] = useState(false);
@@ -85,15 +86,26 @@ export default function Navigation( { sectionRefs, menuItem, isMobile, showHeade
   const scrollTo = (index: number, e: React.MouseEvent) => {
     e.preventDefault();
     const el = sectionRefs[index]?.current;
-  
     if (!el) return;
   
-    requestAnimationFrame(() => {
-      const headerOffset = isSticky ? 80 : 40;
+    if (!isMobile) {
+      const headerOffset = isMobile ? 0 : (isSticky ? 84 : 40);
       const y = el.getBoundingClientRect().top + window.scrollY - headerOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
-    });
+      return;
+    }
+  
+    const isGoingToTop = index === 0;
+
+    setShowHeader(isGoingToTop);
+  
+    setTimeout(() => {
+      const headerOffset = isMobile ? 0 : (isSticky ? 84 : 40);
+      const y = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }, 0);
   };
+  
 
   return (
     <>
@@ -143,7 +155,7 @@ export default function Navigation( { sectionRefs, menuItem, isMobile, showHeade
     {/* Bottom Nav */}
     {isMobile && (
       <div className="fixed bottom-0 left-0 right-0 z-2 bg-background shadow-lg">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-9xl px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between rounded-t-2xl px-4 sm:px-6">
             <div className="flex flex-1 items-center justify-around">
               {menuItems.map((item) => {
