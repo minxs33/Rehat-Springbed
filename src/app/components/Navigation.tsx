@@ -30,6 +30,7 @@ export default function Navigation( { sectionRefs, menuItem, isMobile, showHeade
   
   const [menuItems, setMenuItems] = useState(menuItem)
   const [isSticky, setIsSticky] = useState(false);
+  const [showbottomNav, setShowBottomNav] = useState(true);
   
 
   useEffect(() => {
@@ -81,7 +82,15 @@ export default function Navigation( { sectionRefs, menuItem, isMobile, showHeade
     return () => window.removeEventListener("header-scroll", onScrollChange);
   }, [sectionRefs]);
 
-  
+  useEffect(() => {
+    const onScrollChange = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      setShowBottomNav(detail.isPassed);
+    };
+
+    window.addEventListener("contact-scroll", onScrollChange);
+    return () => window.removeEventListener("contact-scroll", onScrollChange);
+  }, [sectionRefs]);
 
   const scrollTo = (index: number, e: React.MouseEvent) => {
     e.preventDefault();
@@ -153,7 +162,7 @@ export default function Navigation( { sectionRefs, menuItem, isMobile, showHeade
     </header>
     
     {/* Bottom Nav */}
-    {isMobile && (
+    {isMobile && showbottomNav && (
       <div className="fixed bottom-0 left-0 right-0 z-2 bg-background shadow-lg">
         <div className="mx-auto max-w-9xl px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between rounded-t-2xl px-4 sm:px-6">

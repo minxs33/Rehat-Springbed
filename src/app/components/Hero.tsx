@@ -2,7 +2,7 @@
 import { Fragment, useState, useEffect, forwardRef } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
-import Rellax from 'rellax';
+import SocialButton from "./SocialButton";
 
 const slides = [
   {
@@ -18,13 +18,6 @@ const slides = [
     height: 1024,
   }
 ];
-
-interface SocialButtonProps {
-  onClick: () => void;
-  icon: React.ReactNode;
-  children?: React.ReactNode;
-  className?: string;
-}
 
 const Hero = forwardRef<HTMLElement>((props, ref) => {
 
@@ -58,21 +51,6 @@ const Hero = forwardRef<HTMLElement>((props, ref) => {
     return () => clearInterval(interval);
   }, [current]);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const rellax = new Rellax('[data-rellax-speed]', {
-        center: false,
-        round: true,
-        vertical: true,
-        horizontal: false,
-      });
-
-      return () => {
-        rellax.destroy();
-      };
-    }
-  }, []);
-
   const handleImageLoad = () => {
     setLoading(false);
   };
@@ -80,13 +58,6 @@ const Hero = forwardRef<HTMLElement>((props, ref) => {
   const handleNext = () => {
     setCurrent((prev) => (prev + 1) % slides.length);
   };
-
-  const SocialButton = ({ onClick, icon, children, className } : SocialButtonProps) => (
-    <button onClick={onClick} className={`flex items-center gap-2 rounded-full font-semibold drop-shadow-lg ${className}`}>
-      {icon}
-      {children}
-    </button>
-  );
 
   const handleWhatsapp = (number: string) => {
     window.open(`https://wa.me/${number}`, "_blank");

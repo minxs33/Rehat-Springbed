@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import { HomeIcon as HomeIconOutline, BriefcaseIcon as BriefcaseIconOutline, InformationCircleIcon as InfoIconOutline, ChatBubbleBottomCenterIcon as ChatIconOutline } from "@heroicons/react/24/outline";
 import { HomeIcon as HomeIconSolid, BriefcaseIcon as BriefcaseIconSolid, InformationCircleIcon as InfoIconSolid, ChatBubbleBottomCenterIcon as ChatIconSolid, } from "@heroicons/react/24/solid";
 import Partnership from "./components/Partnership";
+import Rellax from 'rellax';
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(true);
@@ -43,6 +44,21 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const rellax = new Rellax('[data-rellax-speed]', {
+        center: true,
+        round: true,
+        vertical: true,
+        horizontal: true,
+      });
+
+      return () => {
+        rellax.destroy();
+      };
+    }
+  }, []);
   
   const sectionRefs = [
     useRef<HTMLElement>(null),
@@ -97,7 +113,7 @@ export default function Home() {
       <Partnership />
       <Services ref={sectionRefs[1]} showHeader={showHeader}/>
       <About ref={sectionRefs[2]}/>
-      <Contact />
+      <Contact ref={sectionRefs[3]}/>
     </>
     
   );
