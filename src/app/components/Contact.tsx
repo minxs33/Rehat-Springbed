@@ -87,8 +87,9 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                 </svg>
               }
               className="whatsapp-button px-6 py-2 lg:px-8 lg:py-4 bg-[#26997A] text-white hover:bg-[#64D8B9] text-base sm:text-sm md:text-md lg:text-lg text-nowrap"
-              children={<span className="text-sm font-semibold">Hubungi Whatsapp 1</span>}
-            />
+            >
+              <span className="text-sm font-semibold">Hubungi Whatsapp 1</span>
+            </SocialButton>
             <SocialButton 
               onClick={() => {}} 
               icon={
@@ -98,8 +99,9 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                 </svg>
               }
               className="whatsapp-button px-6 py-2 lg:px-8 lg:py-4 bg-[#26997A] text-white hover:bg-[#64D8B9] text-base sm:text-sm md:text-md lg:text-lg text-nowrap"
-              children={<span className="text-sm font-semibold">Hubungi Whatsapp 2</span>}
-            />
+            >
+              <span className="text-sm font-semibold">Hubungi Whatsapp 2</span>
+            </SocialButton>
           </div>
         </div>
       </div>
