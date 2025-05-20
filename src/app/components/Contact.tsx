@@ -3,7 +3,7 @@
 import { forwardRef, useEffect, useState} from "react";
 import Image from "next/image";
 import SocialButton from "./SocialButton";
-import { MapIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import { MapIcon, MapPinIcon} from "@heroicons/react/24/solid";
 
 const Contact = forwardRef<HTMLElement>((props, ref) => {
 
