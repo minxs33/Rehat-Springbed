@@ -3,7 +3,7 @@
 import { forwardRef, useEffect, useState} from "react";
 import Image from "next/image";
 import SocialButton from "./SocialButton";
-import { MapIcon, MapPinIcon} from "@heroicons/react/24/solid";
+import Footer from "./Footer";
 
 const Contact = forwardRef<HTMLElement>((props, ref) => {
 
@@ -53,7 +53,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
     <section
       ref={ref}
       id="contact"
-      className="relative overflow-hidden py-15 lg:py-25 bg-background-1"
+      className="relative overflow-hidden pt-15 lg:pt-25 bg-background-1"
     >
       <div
         className="
@@ -148,34 +148,9 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
             ))}
           </div>
 
-          <div className="relative w-full overflow-hidden rounded-xl shadow dark:drop-shadow-gray-600">
-
-          <div className="absolute inset-0 backdrop-blur-md z-0" />
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center px-5 lg:px-12 py-8 shadow-gray-400 z-1">
-              <div className="flex flex-col gap-3 z-1">
-                <div className="flex gap-2 items-center">
-                  <MapIcon className="w-5 h-5 text-foreground" aria-hidden="true" />
-                  <h3 className="text-base font-semibold">Lokasi pabrik</h3>
-                </div>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3963.9333682849933!2d106.8155!3d-6.5301!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c3e3c7b30ecf%3A0xcff0f5a604d0b5a!2sJl.%20Kp.%20Setu%20Sela%2C%20Pasir%20Jambu%2C%20Kec.%20Sukaraja%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat%2016710!5e0!3m2!1sen!2sid!4v1747694362983!5m2!1sen!2sid"
-                  width="auto"
-                  height="auto"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-                <div className="flex gap-1">
-                  <MapPinIcon className="w-6 h-6 text-red-500" aria-hidden="true" />
-                  <h3 className="text-base font-semibold">Jl. Kp. Setu Sela, Pasir Jambu, Kec. Sukaraja, Kabupaten Bogor, Jawa Barat 16710, Indonesia</h3>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+          <Footer />
     </section>
     
   );
