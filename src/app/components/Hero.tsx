@@ -72,10 +72,11 @@ const Hero = forwardRef<HTMLElement>((props, ref) => {
       <div className="container grid gap-8 md:gap-12 lg:gap-16 lg:justify-between lg:grid-cols-12 mx-auto relative overflow-hidden p-2 px-4">
         <div className="lg:col-span-6 flex flex-col gap-6 xl:gap-4 justify-center text-wrap lg:text-left">
           
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">Lorem ipsum dolor sit amet consectetur, <span className="text-primary underline decoration-[--foreground]">adipisicing elit</span></h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">Tidur nyenyak, hidup lebih bertenaga, semua dimulai dari <span className="text-[#1F7768] dark:text-[#75F0DB] underline decoration-[--foreground]">Rehat Springbed</span></h1>
 
-          <p className="text-base sm:text-lg md:text-xl dark:text-gray-300 font-medium text-justify max-w-2xl mx-auto md:mx-0">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse in corrupti eos non velit facilis possimus! Blanditiis neque ea culpa, ducimus obcaecati cumque qui tenetur quae impedit unde repudiandae. Vel.
+          <p className="text-base sm:text-lg md:text-xl dark:text-gray-300 font-medium text-justify max-w-2xl mx-auto md:mx-0 mb-3">
+          Kasur dari Rehat Springbed hadir dengan kenyamanan dan daya tahan maksimal. Nggak heran jadi pilihan utama banyak orang Indonesia. Penasaran kenapa REHAT begitu diandalkan? Yuk, temukan kasur impianmu sekarang!
+
           </p>
 
           <div className="flex justify-center gap-4 lg:justify-start">

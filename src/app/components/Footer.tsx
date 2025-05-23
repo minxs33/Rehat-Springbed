@@ -32,9 +32,9 @@ export default function Footer() {
             </a>
           </p>
           <p>
-            Phone:{" "}
+            Telepon:{" "}
             <a
-              href="https://wa.me/6281234567890"
+              href="tel:+6281234567890"
               className="text-black dark:text-white hover:text-black dark:hover:text-white hover:underline transition-colors"
             >
               +62 812-3456-7890

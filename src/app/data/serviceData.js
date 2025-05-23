@@ -1,6 +1,6 @@
 export const serviceData = {
   serviceFoam: {
-    description: "Various types of foam for springbeds, offering different levels of comfort and durability.",
+    description: "Busa springbed kamu mulai keras atau kempes? REHAT siap ganti busa dengan bahan berkualitas supaya kasur jadi empuk dan nyaman lagi. Proses cepat, hasil rapi, tanpa repot. Ganti busa di REHAT, solusi mudah buat tidur yang lebih nyaman tanpa harus beli kasur baru.",
     image: "/images/placeholder.png",
     items: [
       {
@@ -28,7 +28,7 @@ export const serviceData = {
     ],
   },
   serviceSpring: {
-    description: "Different types of springs used in mattresses for varying levels of support and comfort.",
+    description: "Springbed kamu mulai keras atau pegasnya rusak? REHAT siap bantu ganti pernya! Kami gunakan pegas berkualitas agar kasur kamu kembali nyaman dan tahan lama. Dikerjakan cepat oleh tim ahli, kasur kamu siap dipakai lagi tanpa ribet. Ganti per di REHAT, solusi mudah untuk bikin springbed kamu seperti baru tanpa harus beli baru.",
     image: "/images/placeholder.png",
     items: [
       {
@@ -54,7 +54,7 @@ export const serviceData = {
     ],
   },
   serviceFabric: {
-    description: "Various fabric types used for mattress coverings, offering different aesthetics and durability.",
+    description: "Kasur mulai kusam atau sobek? REHAT hadir dengan layanan ganti kain springbed yang bikin kasur tampak baru, lebih nyaman, dan tahan lama. Dikerjakan oleh tim ahli, prosesnya cepat, rapi, dan hemat biaya. Ganti kain di REHAT, solusi cerdas untuk memperpanjang usia kasurmu.",
     image: "/images/placeholder.png",
     items: [
       {
