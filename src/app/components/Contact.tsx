@@ -66,7 +66,6 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
           pointer-events-none
           z-0
         "
-        data-rellax-speed="3"
       >
         <svg
           viewBox="0 0 200 200"
@@ -92,7 +91,6 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
           pointer-events-none
           z-0
         "
-        data-rellax-speed="3"
       >
         <svg
           viewBox="0 0 200 200"

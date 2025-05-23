@@ -6,8 +6,8 @@ import { useState, useRef, useEffect } from "react";
 import Navigation from "./components/Navigation";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import { HomeIcon as HomeIconOutline, BriefcaseIcon as BriefcaseIconOutline, InformationCircleIcon as InfoIconOutline, ChatBubbleBottomCenterIcon as ChatIconOutline } from "@heroicons/react/24/outline";
-import { HomeIcon as HomeIconSolid, BriefcaseIcon as BriefcaseIconSolid, InformationCircleIcon as InfoIconSolid, ChatBubbleBottomCenterIcon as ChatIconSolid, } from "@heroicons/react/24/solid";
+import { HomeIcon as HomeIconOutline, WrenchIcon as WrenchIconOutline, InformationCircleIcon as InfoIconOutline, ChatBubbleBottomCenterIcon as ChatIconOutline } from "@heroicons/react/24/outline";
+import { HomeIcon as HomeIconSolid, WrenchIcon as WrenchIconSolid, InformationCircleIcon as InfoIconSolid, ChatBubbleBottomCenterIcon as ChatIconSolid, } from "@heroicons/react/24/solid";
 import Partnership from "./components/Partnership";
 import Rellax from 'rellax';
 
@@ -17,7 +17,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false); 
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 1023px)'); // Tailwind's `lg` is 1024px
+    const mediaQuery = window.matchMedia('(max-width: 1023px)');
     const handleResize = () => setIsMobile(mediaQuery.matches);
   
     handleResize();
@@ -81,8 +81,8 @@ export default function Home() {
       name: "Jasa Kami",
       href: "#services",
       icon: {
-        solid: BriefcaseIconSolid,
-        outline: BriefcaseIconOutline,
+        solid: WrenchIconSolid,
+        outline: WrenchIconOutline,
       },
       current: false,
     },

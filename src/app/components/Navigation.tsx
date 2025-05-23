@@ -126,16 +126,16 @@ export default function Navigation( { sectionRefs, menuItem, isMobile, showHeade
     >
       <nav aria-label="Global" className={`mx-auto flex gap-2 max-w-12xl ${isSticky ? 'xl:container' : ''} items-center justify-between p-6 lg:px-8 text-black dark:text-white"`}>
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 flex gap-2 items-center" onClick={(e) => scrollTo(0,e)}>
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center" onClick={(e) => scrollTo(0,e)}>
             <span className="sr-only">Rehat Springbed</span>
             <Image
-              width={16}
-              height={16}
+              width={100}
+              height={100}
               alt=""
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+              src="/images/logo-light.png"
               className="h-9 w-auto"
             />
-            <span className="text-sm/6 font-semibold font-[Sans-Serif]leading-6 text-foreground">Springbed</span>
+            <span className="text-sm/6 font-semibold font-[Sans-Serif]leading-6 text-primary pointer-events-none">springbed</span>
           </Link>
         </div>
         <div className="flex gap-4 lg:hidden">

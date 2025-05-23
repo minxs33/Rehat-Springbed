@@ -9,7 +9,7 @@ interface SocialButtonProps {
 }
 
 const SocialButton = ({ onClick, onMouseEnter, onMouseLeave, icon, children, className } : SocialButtonProps) => (
-    <button onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={`flex items-center gap-2 rounded-full font-semibold drop-shadow-lg ${className}`}>
+    <button onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={`flex items-center gap-2 font-semibold drop-shadow-lg ${className}`}>
         {icon}
         {children}
     </button>

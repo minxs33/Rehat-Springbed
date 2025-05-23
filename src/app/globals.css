@@ -7,9 +7,9 @@
   --font-mono: var(--font-geist-mono, monospace);
 
   /* === Primary HSL Color === */
-  --primary-h: 164; /* Greenish tone */
-  --primary-s: 60%;  /* Good saturation */
-  --primary-l: 50%;  /* Balanced lightness */
+  --primary-h: 170; /* Greenish tone */
+  --primary-s: 59%;  /* Good saturation */
+  --primary-l: 39%;  /* Balanced lightness */
 }
 
 body, header, section{
