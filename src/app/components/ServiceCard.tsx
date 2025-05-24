@@ -9,12 +9,13 @@ interface ServiceItem {
   }
   
   interface ServiceCardProps {
+    title: string;
     image: string;
     description: string;
     items: ServiceItem[];
   }
 
-export default function ServiceCard({ image, description, items }: ServiceCardProps) {
+export default function ServiceCard({ title, image, description, items }: ServiceCardProps) {
 
     const stickyImage = useRef<HTMLDivElement | null>(null);
 
@@ -33,7 +34,6 @@ export default function ServiceCard({ image, description, items }: ServiceCardPr
             </div>
            
             <div className="flex flex-col gap-4">
-              {/* <h2 className="text-xl font-bold text-foreground">Jenis {title.replace(/([A-Z])/g, " $1").replace(/^./, (char) => char.toUpperCase())}</h2> */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-8 max-w-[80%] mx-auto sm:mx-0 sm:max-w-full">
                 {items.map((item, i) => (
                   <div
