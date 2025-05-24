@@ -13,7 +13,7 @@ const Services = forwardRef<HTMLElement, ServicesProps>((props, ref) => {
 
     const [activeKey, setActiveKey] = useState(0);
     const serviceEntries = Object.entries(serviceData);
-    const [_, activeItems] = serviceEntries[activeKey];
+    const [, activeItems] = serviceEntries[activeKey];
 
     const stickyTabs = useRef<HTMLDivElement | null>(null);
     const topOfTabs = useRef<HTMLDivElement | null>(null);
