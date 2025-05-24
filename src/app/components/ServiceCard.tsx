@@ -9,13 +9,13 @@ interface ServiceItem {
   }
   
   interface ServiceCardProps {
-    title: string;
+    _title?: string;
     image: string;
     description: string;
     items: ServiceItem[];
   }
 
-export default function ServiceCard({ title, image, description, items }: ServiceCardProps) {
+export default function ServiceCard({ image, description, items }: ServiceCardProps) {
 
     const stickyImage = useRef<HTMLDivElement | null>(null);
 

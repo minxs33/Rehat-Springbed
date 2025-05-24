@@ -81,7 +81,6 @@ const Services = forwardRef<HTMLElement, ServicesProps>((props, ref) => {
 
             <div className="container mx-auto px-4">
                 <ServiceCard
-                    title={activeKeyName}
                     image={activeItems.image}
                     description={activeItems.description}
                     items={activeItems.items}
