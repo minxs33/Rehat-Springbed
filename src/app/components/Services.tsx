@@ -13,7 +13,7 @@ const Services = forwardRef<HTMLElement, ServicesProps>((props, ref) => {
 
     const [activeKey, setActiveKey] = useState(0);
     const serviceEntries = Object.entries(serviceData);
-    const [activeKeyName, activeItems] = serviceEntries[activeKey];
+    const [_, activeItems] = serviceEntries[activeKey];
 
     const stickyTabs = useRef<HTMLDivElement | null>(null);
     const topOfTabs = useRef<HTMLDivElement | null>(null);
@@ -81,7 +81,6 @@ const Services = forwardRef<HTMLElement, ServicesProps>((props, ref) => {
 
             <div className="container mx-auto px-4">
                 <ServiceCard
-                    title={activeKeyName}
                     image={activeItems.image}
                     description={activeItems.description}
                     items={activeItems.items}
