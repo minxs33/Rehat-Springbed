@@ -1,15 +1,14 @@
-"use client";
+'use client'
 
 import ServiceCard from "./ServiceCard";
 import { serviceData } from "../data/serviceData";
-import { useState, useRef, forwardRef } from "react";
+import { useState, useRef, useContext } from "react";
+import { HeaderContext } from './ClientNavigation';
 
-interface ServicesProps {
-    showHeader: boolean;
-};
 
-const Services = forwardRef<HTMLElement, ServicesProps>((props, ref) => {
-    const { showHeader } = props;
+export default function Services() {
+
+    const { showHeader } = useContext(HeaderContext);
 
     const [activeKey, setActiveKey] = useState(0);
     const serviceEntries = Object.entries(serviceData);
@@ -35,7 +34,7 @@ const Services = forwardRef<HTMLElement, ServicesProps>((props, ref) => {
     };
 
     return (
-        <section className="bg-background py-15 lg:py-25" id="services" ref={ref}>
+        <>
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center mb-8 text-primary">Layanan Kami</h2>
                 <p className="text-lg text-foreground font-semibold text-center mb-8">
@@ -86,9 +85,8 @@ const Services = forwardRef<HTMLElement, ServicesProps>((props, ref) => {
                     items={activeItems.items}
                 />
             </div>
-        </section>
+        </>
     );
-});
+}
 
 Services.displayName = "Services";
-export default Services;
