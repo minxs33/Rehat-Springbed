@@ -1,5 +1,5 @@
 import Hero from "./components/Hero";
-import Services from "./components/Services";
+import Service from "./components/Service";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Partnership from "./components/Partnership";
@@ -18,9 +18,7 @@ export default function Home() {
         <Hero />
       </Sections>
       <Partnership />
-      <Sections className="bg-background py-15 lg:py-25" id="services">
-        <Services />
-      </Sections>
+      <Service />
       <About />
       <Contact />
       </ClientNavigation>
