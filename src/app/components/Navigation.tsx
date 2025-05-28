@@ -27,7 +27,7 @@ interface NavigationProps {
 export default function Navigation( { menuItem, isMobile, showHeader, isSticky, onNavLinkClick } : NavigationProps) {
 
   const handleLogoClick = (e: React.MouseEvent) => {
-    onNavLinkClick(e, '#home'); // Use the general click handler for the home link
+    onNavLinkClick(e, '#home');
   };
 
 return (
@@ -57,11 +57,11 @@ return (
                 <SwitchThemes />
             </div>
             <PopoverGroup className="hidden lg:flex lg:gap-x-12 items-center">
-                {menuItem.map((item) => ( // Use 'menuItem' prop directly
+                {menuItem.map((item) => (
                     <Link
                         key={item.name}
                         href={item.href}
-                        onClick={(e) => onNavLinkClick(e, item.href)} // Use the passed handler
+                        onClick={(e) => onNavLinkClick(e, item.href)}
                         className={`transition duration-300 ease-in-out ${item.current ? "text-sm/6 font-bold leading-6 text-foreground" : "text-sm/6 font-semibold leading-6 text-gray-400"}`}>
                         {item.name}
                     </Link>
@@ -77,13 +77,13 @@ return (
             <div className="mx-auto max-w-9xl px-4 sm:px-6">
                 <div className="flex h-16 items-center justify-between rounded-t-2xl px-4 sm:px-6">
                     <div className="flex flex-1 items-center justify-around">
-                        {menuItem.map((item) => { // Use 'menuItem' prop directly
+                        {menuItem.map((item) => {
                             const Icon = item.icon;
                             return (
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    onClick={(e) => onNavLinkClick(e, item.href)} // Use the passed handler
+                                    onClick={(e) => onNavLinkClick(e, item.href)}
                                     className="transition duration-300 ease-in-out"
                                 >
                                     <span

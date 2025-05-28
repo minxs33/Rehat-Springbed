@@ -12,7 +12,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
   const buttons = [
     {
       label: 'WhatsApp 1',
-      number: '+628123456789',
+      number: '+6282311340007',
     },
     {
       label: 'WhatsApp 2',
@@ -46,7 +46,9 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
 
   const handleWhatsapp = (number: string, e: React.MouseEvent) => {
     e.preventDefault();
-    window.open(`https://wa.me/${number}`, "_blank");
+    const message = "Halo min, saya ingin bertanya tentang...";
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${number}/?text=${encodedMessage}`, "_blank");
   };
 
   return (

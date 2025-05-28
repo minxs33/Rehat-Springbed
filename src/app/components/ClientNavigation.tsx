@@ -4,9 +4,10 @@ import { createContext, useCallback, useEffect, useRef, useState } from "react";
 import Navigation from "./Navigation";
 import { HomeIcon as HomeIconOutline, WrenchIcon as WrenchIconOutline, InformationCircleIcon as InfoIconOutline, ChatBubbleBottomCenterIcon as ChatIconOutline } from "@heroicons/react/24/outline";
 import { HomeIcon as HomeIconSolid, WrenchIcon as WrenchIconSolid, InformationCircleIcon as InfoIconSolid, ChatBubbleBottomCenterIcon as ChatIconSolid, } from "@heroicons/react/24/solid";
-
+import { NavigationContext } from './NavigationContext';
 
 export const HeaderContext = createContext({ showHeader: true });
+
 
 interface NavigationClientProps {
     children: React.ReactNode
@@ -148,6 +149,7 @@ export default function NavigationClient({children}: NavigationClientProps) {
     
     return (
       <HeaderContext.Provider value={{ showHeader }}>
+        <NavigationContext.Provider value={{ triggerNavLinkClick: handleNavLinkClick }}>
           <Navigation
               menuItem={processedMenuItems}
               isMobile={isMobile}
@@ -156,6 +158,7 @@ export default function NavigationClient({children}: NavigationClientProps) {
               onNavLinkClick={handleNavLinkClick} 
           />
           {children}
+        </NavigationContext.Provider>
       </HeaderContext.Provider>
     ) 
   
