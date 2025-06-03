@@ -61,7 +61,7 @@ export default function NavigationClient({children}: NavigationClientProps) {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
   
-      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 96) {
         setShowHeader(false);
       } else {
         setShowHeader(true);
@@ -141,7 +141,7 @@ export default function NavigationClient({children}: NavigationClientProps) {
       const id = href.substring(1);
       const targetElement = document.getElementById(id);
       if (targetElement) {
-          const headerOffset = showHeader ? 82 : 0;
+          const headerOffset = showHeader ? 96 : 0;
           const y = targetElement.getBoundingClientRect().top + window.scrollY - headerOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
       }

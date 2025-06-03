@@ -5,21 +5,7 @@ import Image from "next/image";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/solid";
 import { ChatBubbleBottomCenterIcon } from "@heroicons/react/24/outline";
 import { useNavigationTrigger } from './NavigationContext'; 
-
-const slides = [
-  {
-    id: 1,
-    image: "/images/example-banner.jpg",
-    width: 585,
-    height: 1024,
-  },
-  {
-    id: 2,
-    image: "/images/example-banner-2.png",
-    width: 585,
-    height: 1024,
-  }
-];
+import { heroData } from "../data/heroData";
 
 export default function Hero() {
   const { triggerNavLinkClick } = useNavigationTrigger();
@@ -38,7 +24,7 @@ export default function Hero() {
   };
 
   const handleNext = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
+    setCurrent((prev) => (prev + 1) % heroData.slides.length);
   };
 
   return (
@@ -61,9 +47,7 @@ export default function Hero() {
           </Button>
           <Button
             onClick={(e) => triggerNavLinkClick(e, '#contact')}
-            className="flex items-center justify-center gap-1 px-4 md:px-6 py-2 lg:px-8 lg:py-4 bg-transparent border-2 border-primary text-[#26997A]
-              hover:bg-[#26997A] hover:text-white hover:border-[#26997A] text-base sm:text-sm md:text-md lg:text-lg text-nowrap rounded-full
-              transition-all duration-300 ease-in-out"
+            className="flex items-center justify-center gap-1 px-4 md:px-6 py-2 lg:px-8 lg:py-4 bg-transparent border-2 border-primary text-[#26997A] hover:bg-[#26997A] hover:text-white hover:border-[#26997A] text-base sm:text-sm md:text-md lg:text-lg text-nowrap rounded-full transition-all duration-300 ease-in-out"
             >
             <ChatBubbleBottomCenterIcon className="w-6 h-6"/> 
             <span className="hidden md:block">Kontak Kami</span>
@@ -72,7 +56,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-square flex flex-col justify-center items-center">
-        {slides.map((slide, idx) => (
+        {heroData.slides.map((slide, idx) => (
           <Transition
             key={slide.id}
             show={idx === current}
@@ -90,7 +74,7 @@ export default function Hero() {
                 src={slide.image}
                 width={slide.width}
                 height={slide.height}
-                className={`absolute inset-0 object-cover w-full h-full ${loading ? 'animate-pulse' : ''}`}
+                className={`absolute inset-0 object-contain w-full h-full ${loading ? 'animate-pulse' : ''}`}
                 onLoad={handleImageLoad}
               />
           </Transition>
