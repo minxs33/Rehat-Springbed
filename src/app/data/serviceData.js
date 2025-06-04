@@ -36,7 +36,7 @@ export const serviceData = {
     description: "Springbed kamu mulai keras atau pegasnya rusak? REHAT siap bantu ganti pernya! Kami gunakan pegas berkualitas agar kasur kamu kembali nyaman dan tahan lama. Dikerjakan cepat oleh tim ahli, kasur kamu siap dipakai lagi tanpa ribet. Ganti per di REHAT, solusi mudah untuk bikin springbed kamu seperti baru tanpa harus beli baru.",
     media:
     {
-      type: "image", src: "/services/service-per.JPG",
+      type: "image", src: "/services/service-per.jpg",
     },
     items: [
       {
