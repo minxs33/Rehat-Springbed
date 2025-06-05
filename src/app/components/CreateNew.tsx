@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from "react";
-import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import { ChevronUpIcon, ChevronDownIcon, PhoneArrowUpRightIcon } from "@heroicons/react/24/solid";
+import { Button } from "@headlessui/react";
 
 interface SpringbedSeriesItem {
   id: string;
@@ -20,6 +21,13 @@ export default function CreateNew({ springbedSeriesEntries }: CreateNewProps) {
 
   const toggle = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id));
+  };
+
+  const handleWhatsapp = (number: string, e: React.MouseEvent, type: string) => {
+    e.preventDefault();
+    const message = "Halo min, saya ingin berkonsultasi pembuatan kasur " + type;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${number}/?text=${encodedMessage}`, "_blank");
   };
 
   return (
@@ -53,11 +61,16 @@ export default function CreateNew({ springbedSeriesEntries }: CreateNewProps) {
             </button>
             {openId === series.id && (
               <div className="p-4 pt-0">
-                <div className="text-gray-600 dark:text-gray-200 text-sm sm:text-md font-medium bg-muted p-4 rounded-xl">
+                <div className="text-gray-600 dark:text-gray-200 text-sm sm:text-md font-medium bg-muted p-4 rounded-xl flex flex-col gap-4">
                   <p>{series.details}</p>
-                  <a href="#" className="inline-block mt-3 text-[#2BA799] font-semibold hover:underline">
-                    Lihat Detail →
-                  </a>
+                  <div>
+                    <Button
+                      className="px-6 py-3 text-base font-semibold rounded-full bg-[hsl(170,50%,60%)] hover:bg-[hsl(170,50%,70%)] text-white shadow-md flex items-center relative" onClick={(e) => handleWhatsapp("6282311340007",e, series.title.replace(/^service/, "Service ").replace(/([A-Z])/g, " $1").trim())}
+                    >
+                        Konsultasi Sekarang
+                        <PhoneArrowUpRightIcon className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
                 </div>
               </div>
             )}

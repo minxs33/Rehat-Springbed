@@ -20,7 +20,12 @@ export default function Service() {
             <div className="container mx-auto sm:px-4">
                 
                 <div className="max-w-7xl lg:max-h-[600px] grid grid-cols-1 gap-7 lg:grid-cols-2 px-2 sm:px-8 py-12 mx-auto bg-gradient-to-b md:bg-gradient-to-tr from-[#2A9F8E] to-[#4aeed5] dark:to-[#3f6a63] dark:from-[#1F4741] rounded-2xl shadow hover:shadow-xl transition ease-in-out duration-300 relative overflow-hidden">
-                    <svg className="pointer-events-none z-0 absolute w-[800px] h-[800px] bottom-0 sm:bottom-[-50px] left-[-150px] lg:bottom-[-300px] lg:left-[-130px] opacity-20 lg:opacity-40" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" x="0px" y="0px" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink">
+                    <svg className="
+                            pointer-events-none z-0 absolute 
+                            w-[450px] h-[450px] top-[-120px] bottom-0 right-[-50px] opacity-30 scale-x-[-1]
+                            lg:w-[800px] lg:h-[800px] lg:top-[-175px] lg:left-[-90px] lg:translate-x-0 lg:opacity-40 lg:scale-x-[1]
+                        "
+                        id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" x="0px" y="0px" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <path d="M892.61,587.29A59.813,59.813,0,0,1,832.8,647.1H222.81a44.165,44.165,0,1,1,0-88.33H353.92V503.55H154.79a27.605,27.605,0,0,1,0-55.21H361.76a22.085,22.085,0,1,0,0-44.17H220.97a21.165,21.165,0,0,1,0-42.33H388.06a27.605,27.605,0,0,0,0-55.21H314.58a27.605,27.605,0,1,1,0-55.21h398.9a27.605,27.605,0,1,1,0,55.21h-83.3a27.605,27.605,0,0,0,0,55.21H752.53a27.61,27.61,0,0,1,0,55.22H704.72a55.21,55.21,0,0,0,0,110.42H832.8a59.817,59.817,0,0,1,59.81,59.81Z" fill="#395d77" opacity="0.35"/>
                         <rect x="790.502" y="361.844" width="55.212" height="55.212" rx="27.606" fill="#395d77" opacity="0.35"/>
                         <path d="M273.13,279.03a27.621,27.621,0,0,1-27.61,27.6h-3.89a27.605,27.605,0,0,1,0-55.21h3.89A27.608,27.608,0,0,1,273.13,279.03Z" fill="#395d77" opacity="0.35"/>

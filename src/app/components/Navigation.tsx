@@ -38,6 +38,7 @@ return (
               ${showHeader ? 'translate-y-0' : '-translate-y-full'}
           `}
       >
+
         <nav aria-label="Global" className={`mx-auto flex gap-2 max-w-12xl ${isSticky ? 'xl:container' : ''} items-center justify-between p-6 lg:px-8 text-black dark:text-white"`}>
             <div className="flex lg:flex-1">
                 <Link href="/" className="-m-1.5 p-1.5 flex items-center" onClick={handleLogoClick}>
