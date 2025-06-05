@@ -39,7 +39,7 @@ return (
           `}
       >
 
-        <nav aria-label="Global" className={`mx-auto flex gap-2 max-w-12xl ${isSticky ? 'xl:container' : ''} items-center justify-between p-6 lg:px-8 text-black dark:text-white"`}>
+        <nav aria-label="Global" className={`mx-auto flex gap-2 max-w-1xl ${isSticky ? 'xl:container' : ''} items-center justify-between px-6 py-2 lg:px-8 text-black dark:text-white"`}>
             <div className="flex lg:flex-1">
                 <Link href="/" className="-m-1.5 p-1.5 flex items-center" onClick={handleLogoClick}>
                     <span className="sr-only ">Rehat Springbed</span>
@@ -48,10 +48,9 @@ return (
                         height={100}
                         alt="rehat springbed logo"
                         src="/images/logo-light.png"
-                        className="h-12 w-auto"
+                        className="h-20 w-auto"
                         loading="lazy"
                     />
-                    <span className="text-md/6 font-semibold font-[Sans-Serif] leading-6 text-[#2DA092] dark:text-[#299F90] pointer-events-none">springbed</span>
                 </Link>
             </div>
             <div className="flex gap-4 lg:hidden">

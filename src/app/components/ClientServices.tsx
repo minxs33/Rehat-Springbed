@@ -10,7 +10,7 @@ interface ServiceItem {
     title: string;
     usage: string;
     character: string;
-    image: string;
+    image: string | null;
 }
 
 interface ServiceCategory {
@@ -128,13 +128,15 @@ export default function ClientServices({ serviceEntries }: ServicesClientProps) 
                                         key={i}
                                         className="flex flex-col gap-2 md:flex-row rounded-2xl p-3 md:shadow-[0_0_10px_rgba(0,0,0,0.12)]"
                                     >
-                                        <Image
-                                            src={item.image}
-                                            alt={item.title}
-                                            width={150}
-                                            height={150}
-                                            className="w-full md:max-w-[150px] aspect-square rounded-2xl object-cover"
-                                        />
+                                        {item.image && (    
+                                            <Image
+                                                src={item.image}
+                                                alt={item.title}
+                                                width={150}
+                                                height={150}
+                                                className="w-full md:max-w-[150px] aspect-square rounded-2xl object-cover"
+                                            />
+                                        )}
                                         <div className="flex flex-col gap-2 md:p-3 md:pt-0 text-start">
                                             <h3 className="font-bold text-base sm:text-lg text-foreground">{item.title}</h3>
                                             <p className="text-sm sm:text-md font-medium text-foreground">
@@ -151,7 +153,7 @@ export default function ClientServices({ serviceEntries }: ServicesClientProps) 
                                     <div className="flex flex-col items-center justify-center gap-4 bg-[hsl(170,50%,95%)] dark:bg-[hsl(170,40%,20%)] rounded-2xl p-6 shadow-[0_0_10px_rgba(0,0,0,0.08)] text-center">
                                         <h2 className="text-lg sm:text-xl font-bold text-foreground">
                                         Sudah siap {activeItemsKey.replace(/^service/, "Service ").replace(/([A-Z])/g, " $1").trim()}?</h2>
-                                        <p className="text-sm sm:text-base text-foreground">
+                                        <p className="text-sm sm:text-base text-foreground font-medium">
                                         Kami siap membantu Anda. Klik tombol di bawah untuk menghubungi kami sekarang juga.
                                         </p>
                                         <Button
