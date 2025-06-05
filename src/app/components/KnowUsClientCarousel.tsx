@@ -39,12 +39,12 @@ export default function KnowUsClientCarousel({ slidesData }: { slidesData: Slide
     };
 
     const handlePrev = () => {
-        setDirection('left');
+        setDirection('right');
         setCurrent((prev) => (prev - 1 + slidesData.length) % slidesData.length);
     };
 
     const handleNext = () => {
-        setDirection('right');
+        setDirection('left');
         setCurrent((prev) => (prev + 1) % slidesData.length);
     };
 
@@ -59,9 +59,9 @@ export default function KnowUsClientCarousel({ slidesData }: { slidesData: Slide
         const deltaX = touchEndX - touchStartX;
       
         if (deltaX > 50) {
-            handleNext();
-        } else if (deltaX < -50) {
             handlePrev();
+        } else if (deltaX < -50) {
+            handleNext();
         }
       
         setTouchStartX(null);
