@@ -11,11 +11,11 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
 
   const buttons = [
     {
-      label: 'WhatsApp 1',
+      label: 'Admin 1',
       number: '+6282311340007',
     },
     {
-      label: 'WhatsApp 2',
+      label: 'Admin 2',
       number: '+6282128282864',
     },
   ];
