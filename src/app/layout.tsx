@@ -14,7 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 // Metadata
-if (!process.env.NEXT_PUBLIC_SITE_URL) {
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+
+if (!siteUrl) {
   throw new Error('NEXT_PUBLIC_SITE_URL must be defined, check your .env file or environment variables on your hosting provider');
 }
 
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
     ],
   },
   manifest: 'images/favicons/site.webmanifest',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
+  metadataBase: new URL(siteUrl),
 
   title: {
     default: "Rehat Springbed",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rehat Springbed',
     description: 'Kasur nyaman dan tahan lama untuk tidur lebih sehat.',
-    url: 'https://rehatspringbed.id/',
+    url: `${siteUrl}/images/opengraph-image.png`,
     siteName: 'Rehat Springbed',
     images: [
       {
