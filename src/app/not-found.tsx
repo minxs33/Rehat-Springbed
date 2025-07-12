@@ -4,9 +4,9 @@ import { ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/solid';
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center text-center px-4">
-      <h1 className="text-4xl font-bold text-gray-800">404 — Page Not Found</h1>
+      <h1 className="text-4xl font-bold text-gray-800">404 — Halaman tidak ditemukan</h1>
       <p className="mt-2 text-gray-600">
-        Sorry, we couldn't find the page you're looking for.
+        Maaf, halaman yang anda kunjungi tidak ditemukan. Halaman ini mungkin telah dihapus, dipindahkan, atau tidak pernah ada.
       </p>
       <Link
         href="/"
